@@ -7,7 +7,7 @@ function App() {
       <header className="row">
         <div>
           <a className="brand" href="/">
-            Amazon Clone
+            Amazon clone
           </a>
         </div>
         <div>
