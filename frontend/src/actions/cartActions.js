@@ -1,4 +1,4 @@
-import { CARD_ADD_ITEM } from "../constants/cartConstants";
+import { CARD_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 import Axios from "axios";
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
@@ -14,6 +14,13 @@ export const addToCart = (productId, qty) => async (dispatch, getState) => {
       qty,
     },
   }); //this means, requesting to the redux store to add this product to the cart
+
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+};
+
+/*Implementation of remove from cart */
+export const removeFromCart = (productId) => (dispatch, getState) => {
+  dispatch({ type: CART_REMOVE_ITEM, payload: productId });
 
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };
