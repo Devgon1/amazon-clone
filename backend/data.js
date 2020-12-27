@@ -1,7 +1,23 @@
+import bcrypt from "bcryptjs";
+
 const data = {
+  users: [
+    {
+      name: "Gonzalo",
+      email: "gonzalo@gonzalo.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "john",
+      email: "john@john.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: "1",
+      // _id: "1",  get rid of _id after doping the productRouter in backend
       name: "Gamepad",
       category: "Videogames",
       image: "/images/product.jpg",
@@ -13,7 +29,7 @@ const data = {
       description: "High quality product",
     },
     {
-      _id: "2",
+      // _id: "2",
       name: "Controller",
       category: "Videogames",
       image: "/images/product.jpg",
@@ -25,7 +41,7 @@ const data = {
       description: "High quality product",
     },
     {
-      _id: "3",
+      // _id: "3",
       name: "Processor",
       category: "Videogames",
       image: "/images/product.jpg",
@@ -37,7 +53,7 @@ const data = {
       description: "High quality product",
     },
     {
-      _id: "4",
+      // _id: "4",
       name: "Graphic",
       category: "Videogames",
       image: "/images/product.jpg",
@@ -49,7 +65,7 @@ const data = {
       description: "High quality product",
     },
     {
-      _id: "5",
+      // _id: "5",
       name: "RAM",
       category: "Videogames",
       image: "/images/product.jpg",
